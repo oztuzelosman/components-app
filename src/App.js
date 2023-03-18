@@ -3,14 +3,18 @@ import Button from "./Button";
 //
 import { GiClover } from "react-icons/gi";
 //
+const handleClick = () => {
+  console.log("clicked");
+};
+//
 function App() {
   return (
     <div>
-      <Button primary rounded outline>
+      <Button primary rounded outline onClick={handleClick}>
         <GiClover />
         Hide
       </Button>
-      <Button secondary rounded outline>
+      <Button secondary rounded outline onMouseEnter={handleClick}>
         <GiClover />
         Buy
       </Button>
