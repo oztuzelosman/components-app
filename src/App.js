@@ -14,11 +14,17 @@ function App() {
         <GiClover />
         Hide
       </Button>
-      <Button secondary rounded outline onMouseEnter={handleClick}>
+      <Button
+        secondary
+        rounded
+        outline
+        className="mt-5"
+        onMouseEnter={handleClick}
+      >
         <GiClover />
         Buy
       </Button>
-      <Button success rounded outline>
+      <Button success rounded outline className="mb-5">
         <GiClover />
         Cancel
       </Button>
