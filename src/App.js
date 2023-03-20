@@ -1,42 +1,38 @@
-//
-import Button from "./Button";
-//
-import { GiClover } from "react-icons/gi";
-//
-const handleClick = () => {
-  console.log("clicked");
-};
-//
+import { useState } from "react";
+
 function App() {
-  return (
-    <div>
-      <Button primary rounded outline onClick={handleClick}>
-        <GiClover />
-        Hide
-      </Button>
-      <Button
-        secondary
-        rounded
-        outline
-        className="mt-5"
-        onMouseEnter={handleClick}
-      >
-        <GiClover />
-        Buy
-      </Button>
-      <Button success rounded outline className="mb-5">
-        <GiClover />
-        Cancel
-      </Button>
-      <Button warning rounded>
-        <GiClover />
-        Skip
-      </Button>
-      <Button danger rounded>
-        <GiClover />
-        Add to Cart
-      </Button>
-    </div>
-  );
+  const dataItems = [
+    {
+      id: 1,
+      header: "I love Ramazan Abi!",
+      content: "It increases my developing skills so much",
+    },
+    {
+      id: 2,
+      header: "I love Css!",
+      content: "It increases my developing skills so much",
+    },
+    {
+      id: 3,
+      header: "I love Js!",
+      content: "It increases my developing skills so much",
+    },
+  ];
+
+  const [expandedIndex, setExpandedIndex] = useState(1);
+
+  const renderedItems = dataItems.map((dataItem, index) => {
+    const isExpanded = index === expandedIndex;
+
+    return (
+      <div className="m-5 p-3 border border-red-400 rounded-xl">
+        <span>{dataItem.id}</span>
+        <h3 className="text-lg">{dataItem.header}</h3>
+        {isExpanded && <p>{dataItem.content}</p>}
+      </div>
+    );
+  });
+
+  return <div>{renderedItems}</div>;
 }
 export default App;
