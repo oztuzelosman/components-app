@@ -1,29 +1,16 @@
-import Accordion from "./Accordion";
-//
+import DropDown from "./DropDown";
 import { useState } from "react";
-//
 function App() {
-  const dataItems = [
-    {
-      id: 0,
-      header: "I love React!",
-      content: "It increases my developing skills so much",
-    },
-    {
-      id: 1,
-      header: "I love Css!",
-      content: "It increases my developing skills so much",
-    },
-    {
-      id: 2,
-      header: "I love Js!",
-      content: "It increases my developing skills so much",
-    },
-  ];
+  const [dropVal, setDropVal] = useState("Select...");
+
+  const getDropValue = (itemVal) => {
+    console.log(dropVal);
+    setDropVal(itemVal);
+  };
 
   return (
-    <div>
-      <Accordion dataItems={dataItems} />
+    <div className="m-3">
+      <DropDown getDropValue={getDropValue} dropVal={dropVal} />
     </div>
   );
 }
