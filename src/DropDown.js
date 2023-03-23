@@ -1,3 +1,6 @@
+import { GoChevronDown } from "react-icons/go";
+import { GoChevronLeft } from "react-icons/go";
+//
 import { useState } from "react";
 
 function DropDown({ getDropValue, dropVal }) {
@@ -31,6 +34,7 @@ function DropDown({ getDropValue, dropVal }) {
         key={item.value}
         onClick={() => {
           getDropValue(item.label);
+          setToggleShow();
         }}
       >
         <h3>{item.label}</h3>
@@ -39,11 +43,14 @@ function DropDown({ getDropValue, dropVal }) {
   });
 
   return (
-    <div className="cursor-pointer">
-      <div className="border bg-gray-300 " onClick={handleShow}>
-        {dropVal}
+    <div className="flex flex-col cursor-pointer">
+      <div className="flex justify-between border rounded-xl bg-gray-300 p-1.5">
+        <div className="flex-1 " onClick={handleShow}>
+          {dropVal}
+        </div>
+        <button>{toggleShow ? <GoChevronDown /> : <GoChevronLeft />}</button>
       </div>
-      {toggleShow && itemsList}
+      <div className="mx-1.5">{toggleShow && itemsList}</div>
     </div>
   );
 }

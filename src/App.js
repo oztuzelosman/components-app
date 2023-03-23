@@ -9,7 +9,7 @@ function App() {
   };
 
   return (
-    <div className="m-3">
+    <div className="flex flex-row m-3 w-15">
       <DropDown getDropValue={getDropValue} dropVal={dropVal} />
     </div>
   );
