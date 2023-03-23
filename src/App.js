@@ -1,5 +1,7 @@
 import { useState } from "react";
-import Dropdown from "./Dropdown";
+//import AccordionPage from "./AccordionPage";
+import DropDown from "./DropDown";
+//import ButtonPage from "./ButtonPage";
 
 function App() {
   const [selection, setSelection] = useState(null);
@@ -15,7 +17,13 @@ function App() {
   ];
 
   return (
-    <Dropdown options={options} selection={selection} onSelect={handleSelect} />
+    <div>
+      <DropDown
+        options={options}
+        selection={selection}
+        onSelect={handleSelect}
+      />
+    </div>
   );
 }
 

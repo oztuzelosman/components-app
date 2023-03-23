@@ -9,36 +9,30 @@ function ButtonPage() {
   return (
     <div>
       <div>
-        <Button
-          secondary
-          outline
-          rounded
-          className="mb-5"
-          onClick={handleClick}
-        >
+        <Button secondary outline rounded onClick={handleClick}>
           <GoBell />
           Click me!!
         </Button>
       </div>
       <div>
-        <Button danger outline onMouseEnter={handleClick}>
+        <Button danger outline rounded onMouseEnter={handleClick}>
           <GoCloudDownload />
           Buy Now!
         </Button>
       </div>
       <div>
-        <Button warning onMouseLeave={handleClick}>
+        <Button warning outline rounded onMouseLeave={handleClick}>
           <GoDatabase />
           See Deal!
         </Button>
       </div>
       <div>
-        <Button secondary outline>
+        <Button success outline rounded>
           Hide Ads!
         </Button>
       </div>
       <div>
-        <Button primary rounded>
+        <Button primary outline rounded>
           Something!
         </Button>
       </div>
