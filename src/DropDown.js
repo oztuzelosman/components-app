@@ -8,10 +8,18 @@ import Panel from "./Panel";
 function DropDown({ getDropValue, dropVal, dropDownItems }) {
   const [toggleShow, setToggleShow] = useState(false);
   const divEl = useRef();
+
   useEffect(() => {
-    const alienHandler = () => {
-      //console.log("clicked!");
+    const alienHandler = (event) => {
+      if (!divEl.current.contains(event.target)) {
+        setToggleShow(false);
+      }
     };
+
+    return () => {
+      document.removeEventListener("click", alienHandler);
+    };
+
     document.addEventListener("click", alienHandler, true);
   }, []);
 
