@@ -1,10 +1,19 @@
 import { GoChevronDown } from "react-icons/go";
 import { GoChevronLeft } from "react-icons/go";
 //
-import { useState } from "react";
-
+import { useState, useEffect, useRef } from "react";
+//
+import Panel from "./Panel";
+//
 function DropDown({ getDropValue, dropVal, dropDownItems }) {
   const [toggleShow, setToggleShow] = useState(false);
+  const divEl = useRef();
+  useEffect(() => {
+    const alienHandler = () => {
+      //console.log("clicked!");
+    };
+    document.addEventListener("click", alienHandler, true);
+  }, []);
 
   const handleShow = () => {
     setToggleShow(() => {
@@ -32,14 +41,19 @@ function DropDown({ getDropValue, dropVal, dropDownItems }) {
   }
 
   return (
-    <div className="flex flex-col cursor-pointer">
-      <div className="flex justify-between border rounded-xl bg-gray-300 p-1.5">
-        <div className="flex-1 " onClick={handleShow}>
+    <div ref={divEl} className="w-48 relative ">
+      <div>
+        <Panel
+          className="flex justify-between items-center "
+          onClick={handleShow}
+        >
           {content}
           <button>{toggleShow ? <GoChevronDown /> : <GoChevronLeft />}</button>
-        </div>
+        </Panel>
       </div>
-      <div className="mx-1.5">{toggleShow && itemsList}</div>
+      {toggleShow && (
+        <Panel className="absolute top-full cursor-pointer">{itemsList}</Panel>
+      )}
     </div>
   );
 }

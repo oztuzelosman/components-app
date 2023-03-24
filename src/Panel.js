@@ -1,4 +1,4 @@
-import { Children } from "react";
+import { children } from "react";
 import classNames from "classnames";
 
 function Panel({ children, className, ...rest }) {

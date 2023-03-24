@@ -1,6 +1,6 @@
 import DropDown from "./DropDown";
 import { useState } from "react";
-import Panel from "./Panel";
+//
 function App() {
   const [dropVal, setDropVal] = useState(null);
 
@@ -30,14 +30,6 @@ function App() {
         dropVal={dropVal}
         dropDownItems={dropDownItems}
       />
-      <Panel
-        onClick={() => {
-          console.log("clicked");
-        }}
-        className="ml-7"
-      >
-        Osman
-      </Panel>
     </div>
   );
 }
