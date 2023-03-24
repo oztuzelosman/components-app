@@ -1,5 +1,6 @@
 import DropDown from "./DropDown";
 import { useState } from "react";
+import Panel from "./Panel";
 function App() {
   const [dropVal, setDropVal] = useState(null);
 
@@ -23,12 +24,20 @@ function App() {
   ];
 
   return (
-    <div className="flex flex-row m-3 w-15">
+    <div className="flex flex-row items-center m-3 w-15">
       <DropDown
         getDropValue={getDropValue}
         dropVal={dropVal}
         dropDownItems={dropDownItems}
       />
+      <Panel
+        onClick={() => {
+          console.log("clicked");
+        }}
+        className="ml-7"
+      >
+        Osman
+      </Panel>
     </div>
   );
 }
