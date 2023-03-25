@@ -16,9 +16,7 @@ function DropDown({ getDropValue, dropVal, dropDownItems }) {
       }
     };
 
-    return () => {
-      document.removeEventListener("click", alienHandler);
-    };
+  
 
     document.addEventListener("click", alienHandler, true);
   }, []);
@@ -67,3 +65,7 @@ function DropDown({ getDropValue, dropVal, dropDownItems }) {
 }
 
 export default DropDown;
+
+ /*  return () => {
+      document.removeEventListener("click", alienHandler);
+    }; */
