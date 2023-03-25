@@ -3,6 +3,7 @@ function Testing() {
     <div>
       <h1>Osman Oztuzel</h1>
       <h2> Im solving my problems </h2>
+      <h2> Im solving my problems everyday!!! </h2>
     </div>
   );
 }
