@@ -1,5 +1,6 @@
 import DropDown from "./DropDown";
 import { useState } from "react";
+import Button from "./Button"
 //
 function App() {
   const [dropVal, setDropVal] = useState(null);
@@ -30,7 +31,13 @@ function App() {
         dropVal={dropVal}
         dropDownItems={dropDownItems}
       />
+      <Button primary rounded>Osman</Button>
     </div>
   );
 }
 export default App;
+
+
+//docker run -e WATCHPACK_POLLING=true -v E:\Coding\components-app\src:/app/src -d -p 3000:3000 --name react-auto-hope cra-react-image
+
+//We can put [-e watchpack] part into .env file 
